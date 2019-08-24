@@ -2,6 +2,12 @@ complete <- function(directory="specdata", id=1:332){
     # define DF for data collection
     mydf <- data.frame()
     
+    #check if last character is "/"
+    lastchar <- substr(directory, nchar(directory), nchar(directory))
+    if(lastchar=="/"){
+        directory <- substr(directory, 1, nchar(directory)-1)
+    }
+    
     for(thisID in seq_along(id)){
         # define file path
         thisfile <- sprintf("%s/%03d.csv", directory, id[thisID])
