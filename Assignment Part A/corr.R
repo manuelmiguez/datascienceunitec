@@ -2,6 +2,12 @@ corr <-function(directory="specdata/", threshold=0){
     # variables for colllection
     mydata <- vector()
     
+    #check if last character is "/"
+    lastchar <- substr(directory, nchar(directory), nchar(directory))
+    if(lastchar!="/"){
+        directory <- paste(directory, "/", sep='')
+    }
+    
     # create list of all .csv files in folder
     file_list <- list.files(path=directory, pattern="*.csv") 
     
