@@ -1,6 +1,12 @@
 pollutantvector<-function(directory="specdata", pollutant="sulfate", id=1:332, p=0.5){
     mylist <- vector()
     
+    #check if last character is "/"
+    lastchar <- substr(directory, nchar(directory), nchar(directory))
+    if(lastchar=="/"){
+        directory <- substr(directory, 1, nchar(directory)-1)
+    }
+    
     # run for each ID
     for(thisID in seq_along(id)){
         # define file path 
