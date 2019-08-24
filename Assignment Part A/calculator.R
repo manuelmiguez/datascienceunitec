@@ -39,7 +39,7 @@ calculator<-function(){
         }# end for
     }else if(Operation==6){
         isPrime<-0
-        # if the number is less than 1 cannot be a prime
+        # if the number is less than 1 it cannot be a prime
         if(thenumber>1){
             if(thenumber==2) {
                 isPrime<-1
@@ -56,6 +56,6 @@ calculator<-function(){
         }else{
             print(sprintf("%s is not a prime number", thenumber))
         }
-    }# end oepration if
+    }# end operation if
 }
 
